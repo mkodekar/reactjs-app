@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"npm run build",
+    "start": "npm run build",
     "build": "webpack -d && copy src\\index.html dist\\index.html && webpack-dev-server --content-base src/ --inline --hot",
-    "buid:prod": "webpack -p && copy src\\index.html dist\\index.html" 
+    "buid:prod": "webpack -p && copy src\\index.html dist\\index.html"
   },
   "author": "Rehan Kodekar <rkodekar@zoho.com>",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "webpack": "^3.5.6",
