@@ -5,13 +5,18 @@ class Home extends React.Component {
 
     constructor(props) {
         super();
-        this.age = props.user.age;
+        this.state = {
+            age: props.user.age 
+        }; 
+        this.makeMeOlder = this.makeMeOlder.bind(this);
     }
 
 
     makeMeOlder() {
-        this.age +=3;
-        console.log(this.age);
+        this.setState({
+            age: this.state.age+3
+        });
+        console.log(this.state.age);
     }
 
     render() {
@@ -29,7 +34,7 @@ class Home extends React.Component {
                 {content}
                 {5 == 3 ? "Yes" : "No"}
                 <h3>Your name is {this.props.user.name}</h3>
-                <p>your age is {this.age} {ln}
+                <p>your age is {this.state.age} {ln}
                 </p>
                 <h5>Hobbies</h5>
                     <ul>
