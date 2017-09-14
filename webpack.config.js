@@ -21,7 +21,7 @@ var config = {
                 include: SRC_DIR,
                 loader: "babel-loader",
                 query: {
-                    presets: ["react", "es2016"]
+                    presets: ["react", "es2016",]
                 }
             }
         ]
