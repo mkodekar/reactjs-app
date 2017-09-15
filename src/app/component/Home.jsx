@@ -50,7 +50,8 @@ class Home extends React.Component {
                     {this.props.user.hobbies.map((hobby, i) => <li key={i}>{hobby}</li>)}
                     </ul>
                 {this.props.children}
-                <button onClick={this.makeMeOlder.bind(this)}  className="btn btn-success">Make me older</button>
+                <button onClick={this.makeMeOlder}  className="btn btn-success">Make me older</button> {ln}
+                <button onClick={this.props.greet} className="btn btn-default">Greet</button>
             </div>
         );
     }
@@ -58,7 +59,8 @@ class Home extends React.Component {
 
 Home.propTypes = {
     user: PropTypes.object,
-    children: PropTypes.element.isRequired
+    children: PropTypes.element.isRequired,
+    greet: PropTypes.func
 }
 
 export default Home;
