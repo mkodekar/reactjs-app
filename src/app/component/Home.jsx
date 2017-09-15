@@ -12,6 +12,41 @@ class Home extends React.Component {
         }; 
         
         this.makeMeOlder = this.makeMeOlder.bind(this);
+        console.log("constructor");
+    }
+
+    componentWillMount() {
+        console.log("component will mount");
+    }
+
+    componentDidMount() {
+        console.log("component did mount");
+    }
+
+    
+    componentWillReceiveProps(nextProps) {
+        console.log("component will receive props", nextProps);
+    }
+
+    shouldComponentUpdate (nextProps, nextState) {
+        console.log("should component update", nextProps, nextState);
+        /* if (nextState.status === 1) {
+            return false;
+        } */
+        return true;
+    }
+    
+
+    componentWillUpdate(nextProps, nextState) {
+        console.log("component will update", nextProps, nextState);
+    }
+    
+    componentDidUpdate(prevProps, prevState) {
+        console.log("component did update", prevProps, prevState)
+    }
+
+    componentWillUnmount() {
+        console.log("component will unmount");
     }
 
     onChangeName() {
@@ -69,6 +104,7 @@ class Home extends React.Component {
                 <button onClick={() => this.onChangeName()} className="btn btn-primary">Change Name</button>
                     <hr>
                     </hr>
+
                 </p>
                 <h5>Hobbies</h5>
                     <ul>

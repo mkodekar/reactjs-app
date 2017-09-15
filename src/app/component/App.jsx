@@ -7,7 +7,8 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            homeLink: "Home"
+            homeLink: "Home",
+            homeMount: true
         }
     }
 
@@ -21,6 +22,12 @@ class App extends React.Component {
         });
     }
 
+    toggleHomeMounted() {
+        this.setState({
+            homeMount: !this.state.homeMount
+        })
+    }
+
     render() {
         var user = {
             name: "Rehan",
@@ -29,6 +36,19 @@ class App extends React.Component {
                 "Programming", "movies", "Tv shows"
             ]
         };
+        
+        let homeComponent = "";
+        if (this.state.homeMount) {
+            homeComponent = (
+                <Home 
+                user={user} 
+                greet={this.onGreet} 
+                homeLink={this.state.homeLink} 
+                changeLink={this.onChangeLink.bind(this)}
+                initialLink={this.state.homeLink}><p>This is a paragraph</p>
+                </Home>
+            );
+        }
         return(
             <div className="container">
                 <div className="row">
@@ -38,13 +58,15 @@ class App extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home 
-                        user={user} 
-                        greet={this.onGreet} 
-                        homeLink={this.state.homeLink} 
-                        changeLink={this.onChangeLink.bind(this)}
-                        initialLink={this.state.homeLink}><p>This is a paragraph</p>
-                        </Home>
+                        {homeComponent}
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-xs-10 col-xs-offset-1">
+                    <button onClick={() => this.toggleHomeMounted()} className="btn btn-primary">Toggle Home Mounted</button>
+                    <hr>
+                    </hr>
                     </div>
                 </div>
             </div>
