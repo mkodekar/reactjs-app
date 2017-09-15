@@ -36,10 +36,15 @@ class App extends React.Component {
                         <Header home={this.state.homeLink}/>
                     </div>
                 </div>
-           { /*<h1 className="text-center">Hello there world</h1>*/}
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home user={user} greet={this.onGreet} changeLink={this.onChangeLink.bind(this)}><p>This is a paragraph</p></Home>
+                        <Home 
+                        user={user} 
+                        greet={this.onGreet} 
+                        homeLink={this.state.homeLink} 
+                        changeLink={this.onChangeLink.bind(this)}
+                        initialLink={this.state.homeLink}><p>This is a paragraph</p>
+                        </Home>
                     </div>
                 </div>
             </div>

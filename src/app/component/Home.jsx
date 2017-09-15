@@ -18,6 +18,14 @@ class Home extends React.Component {
         this.props.changeLink(this.state.homeLink);
     }
 
+
+    onInputTextChange(event) {
+        this.setState({
+            homeLink: event.target.value
+        });
+        this.props.changeLink(event.target.value);
+    }
+
     makeMeOlder() {
         this.setState({
             age: this.state.age+3
@@ -47,17 +55,17 @@ class Home extends React.Component {
                 {5 == 3 ? "Yes" : "No"}
                 <h3>Your name is {this.props.user.name}</h3>
                 <p>your age is {this.state.age} {ln}
-                    <hr>
-                    </hr>
                     status = {this.state.status} {ln}
-                    <hr>
-                    </hr>
                     <button onClick={this.makeMeOlder}  className="btn btn-success">Make me older</button> {ln}
                     <hr>
                     </hr>
                 <button onClick={this.props.greet} className="btn btn-default">Greet</button> {ln}
                     <hr>
                     </hr>
+        
+
+                <input type="text" value={this.props.homeLink}  onChange={this.onInputTextChange.bind(this)} />
+
                 <button onClick={() => this.onChangeName()} className="btn btn-primary">Change Name</button>
                     <hr>
                     </hr>
