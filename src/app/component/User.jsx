@@ -1,12 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-export class Home extends React.Component {
+
+export class User extends React.Component {
 
     render() {
         return(
             <div>
-            <h1>This is home</h1>
+            <h3>User page </h3>
+            <p>User id: </p>
             </div>
         );
     }
